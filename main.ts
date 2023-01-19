@@ -1,10 +1,16 @@
 input.onButtonPressed(Button.A, function () {
-    basic.showIcon(IconNames.Happy)
+    basic.showString("hi")
 })
 input.onButtonPressed(Button.B, function () {
-    basic.showIcon(IconNames.Sad)
+    basic.showString("bye")
 })
-basic.showIcon(IconNames.Yes)
-basic.forever(function () {
-	
+input.onGesture(Gesture.Shake, function () {
+    basic.showLeds(`
+        . # # # #
+        . . . . #
+        . . # # .
+        . . . . .
+        . . # . .
+        `)
 })
+basic.showIcon(IconNames.Happy)
